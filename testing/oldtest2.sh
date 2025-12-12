@@ -2,13 +2,13 @@
 #
 
 # Single PUT to node 1
-python3 ./kvclient.py --nodes 127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003 cmd --node 1  "PUT color red"
-python3 ./kvclient.py --nodes 127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003 cmd --node 2  "PUT color blue"
+python3 ./kvclient.py --nodes 192.168.122.250:5900,192.168.122.58:5901,192.168.122.170:5902,192.168.122.11:5903,192.168.122.9:5904 cmd --node 0  "PUT color red"
+python3 ./kvclient.py --nodes 192.168.122.250:5900,192.168.122.58:5901,192.168.122.170:5902,192.168.122.11:5903,192.168.122.9:5904 cmd --node 1  "PUT color blue"
 
 
 # GET from node 2
-python3 ./kvclient.py  --nodes 127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003 cmd --node 2   "GET color"
-python3 ./kvclient.py  --nodes 127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003 cmd --node 0   "GET color"
+python3 ./kvclient.py  --nodes 192.168.122.250:5900,192.168.122.58:5901,192.168.122.170:5902,192.168.122.11:5903,192.168.122.9:5904 cmd --node 1   "GET color"
+python3 ./kvclient.py  --nodes 192.168.122.250:5900,192.168.122.58:5901,192.168.122.170:5902,192.168.122.11:5903,192.168.122.9:5904 cmd --node 0   "GET color"
 
 
 
