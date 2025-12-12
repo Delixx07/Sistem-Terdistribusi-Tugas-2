@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 """
 # Single PUT to node 1
---nodes 127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003 --node 1 -- cmd "PUT color blue"
+--nodes 192.168.122.250:5900,192.168.122.58:5901,192.168.122.170:5902,192.168.122.11:5903,192.168.122.9:5904 --node 0 -- cmd "PUT color blue"
 
 # GET from node 2
---nodes 127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003 --node 2 -- cmd "GET color"
+--nodes 192.168.122.250:5900,192.168.122.58:5901,192.168.122.170:5902,192.168.122.11:5903,192.168.122.9:5904 --node 1 -- cmd "GET color"
 
 # Race two writers (great for no-mutex demo)
---nodes 127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003 -- race "PUT color blue" "PUT color red"
+--nodes 192.168.122.250:5900,192.168.122.58:5901,192.168.122.170:5902,192.168.122.11:5903,192.168.122.9:5904 -- race "PUT color blue" "PUT color red"
 
 # Read the key from ALL nodes after the race
---nodes 127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003 -- getall color
+--nodes 192.168.122.250:5900,192.168.122.58:5901,192.168.122.170:5902,192.168.122.11:5903,192.168.122.9:5904 -- getall color
 
 # Quick benchmark (mix of GET/PUT) to random nodes
---nodes 127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003 -- bench --ops 50 --key color --put-ratio 0.3
+--nodes 192.168.122.250:5900,192.168.122.58:5901,192.168.122.170:5902,192.168.122.11:5903,192.168.122.9:5904 -- bench --ops 50 --key color --put-ratio 0.3
 
 # Interactive REPL 
---nodes 127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003 -- repl
+--nodes 192.168.122.250:5900,192.168.122.58:5901,192.168.122.170:5902,192.168.122.11:5903,192.168.122.9:5904 -- repl
 """
 
 import argparse, socket, time, threading, random, statistics, sys

@@ -2,6 +2,6 @@
 
 python3 ./kv.py \
 --logger \
---logger-tcp 5010 \
---host 192.168.122.139 \
+--logger-tcp 5905 \
+--host 192.168.122.210 \
 --numnodes 5
