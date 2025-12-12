@@ -389,6 +389,7 @@ def main():
     ap.add_argument('--id', type=int)
     ap.add_argument('--tcp', type=int)
     ap.add_argument('--udp', type=int)
+    ap.add_argument('--host', type=str, default='127.0.0.1')
     ap.add_argument('--peers', type=str, default='', help='host:tcp=id or host:tcp:udp=id (others; self auto-added)')
     ap.add_argument('--logger-addr', type=str, default='127.0.0.1:9000')
     ap.add_argument('--use-mutex', type=int, default=0, help='0/1 to disable/enable mutex')
